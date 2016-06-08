@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebApplication2.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>@ViewBag.Message</h3>
+<h2>All Movies</h2>
+
+<!--<ul>
+    <li>Laal Ishq</li>
+    <li>Angry Birds</li>
+    <li>Sarabjit</li>
+</ul>-->
+<div class="col-lg-6">
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr><td>@Html.ActionLink(item.Title, "NewDetails", "Movies", new { id = item.Id }, new { @class = "movieLink2", data_toggle = "popover", data_html = "true", data_content = item.Title + "<br/>rating: " + item.Rating + "<br/><img src='" + item.ImageUrl + "&text=" + Html.Encode(item.Title) + "'/>" })</td></tr>
+            <tr><td><a href="javascript:void(0)" class="movieLink" data-movieid=@item.Id />@item.Title</td></tr>
+        }
+    </table>
+</div>
+<div class="col-lg-6">
+    <div id="divMovieDetails"></div>
+</div>

@@ -1,0 +1,14 @@
+﻿@using WebApplication2.Views
+@{
+    ViewBag.Title = "NewDetails";
+}
+
+<h2>NewDetails</h2>
+
+<h2>NEW Movie Details </h2>
+
+<p>ID = @Model.Id</p>
+<p>Title = @Model.Title</p>
+<p>Rating = @CustomHtmlHelpers.PrettyRatings(Model.Rating)</p>
+
+@Html.ActionLink("Back to Movie List", "", "Movies")
