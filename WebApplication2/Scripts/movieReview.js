@@ -1,8 +1,8 @@
 ﻿$(function () {
-    //$(".movieLink2").popover({
-    //    trigger: 'hover',
-    //    'placement': 'top'
-    //});
+    $(".movieLink2").popover({
+        trigger: 'hover',
+        'placement': 'top'
+    });
     $(".movieLink").on("click", function () {
         $.ajax({
             url: '/Movies/NewDetailsAsync/?id=' + $(this).data('movieid'),
